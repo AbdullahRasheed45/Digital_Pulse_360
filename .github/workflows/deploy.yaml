@@ -24,7 +24,6 @@ jobs:
       - name: Build and Export Static Site
         run: |
           npm run build
-          npm run export
 
       - name: Deploy to Hostinger via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
