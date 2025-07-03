@@ -27,39 +27,39 @@ import {
 } from "lucide-react";
 import { NewsletterSection } from "../Components/NewsLetter/NewsLetter";
 const teamMembers = [
-  {
-    name: "Zubair Bashir",
-    role: "CEO & Founder",
-    image: "/images/zubair.jpg",
-    bio: "Visionary leader with 15+ years in tech innovation.",
-    bio1: "Zubair’s journey from a finance and accounting expert to a tech and AI enthusiast has been nothing short of transformative. With over 15 years of experience in financial management and a passion for cutting-edge technology, he now leads innovative AI-driven solutions that bridge the gap between finance and technology, helping businesses thrive in the digital age.",
-    twitter: "https://twitter.com/zubairbashir",
-    linkedin: "https://linkedin.com/in/zubairbashir",
-    github: "https://github.com/zubairbashir",
-  },
+  // {
+  //   name: "Zubair Bashir",
+  //   role: "CEO & Founder",
+  //   image: "/images/zubair.jpg",
+  //   bio: "Visionary leader with 15+ years in tech innovation.",
+  //   bio1: "Zubair’s journey from a finance and accounting expert to a tech and AI enthusiast has been nothing short of transformative. With over 15 years of experience in financial management and a passion for cutting-edge technology, he now leads innovative AI-driven solutions that bridge the gap between finance and technology, helping businesses thrive in the digital age.",
+  //   twitter: "https://twitter.com/zubairbashir",
+  //   linkedin: "https://linkedin.com/in/zubairbashir",
+  //   github: "https://github.com/zubairbashir",
+  // },
   {
     name: "Muhammad Abdullah",
-    role: "CTO",
+    role: "CEO & Founder",
     image: "/images/abdullah1.jpg",
     bio: "Passionate about cutting-edge technologies and scalable solutions.",
-    bio1: "A tech enthusiast with a deep passion for developing scalable, efficient, and high-performance systems. Abdullah thrives on solving complex problems and has a proven track record of leading successful projects that harness the latest advancements in technology.",
+    bio1: "A Cambridge university graduate and tech enthusiast with a deep passion for developing scalable, efficient, and high-performance systems. Abdullah thrives on solving complex problems and has a proven track record of leading successful projects that harness the latest advancements in technology.",
     twitter: "https://twitter.com/johnsmith",
     linkedin: "https://linkedin.com/in/johnsmith",
     github: "https://github.com/johnsmith",
   },
-  {
-    name: "Alice Johnson",
-    role: "Design Lead",
-    image: "/images/alice.jpg",
-    bio: "Award-winning designer with a keen eye for user-centric experiences.",
-    bio1: "An award-winning designer with a sharp eye for user-centric experiences and a deep understanding of the intersection between art and technology. Alice crafts intuitive, aesthetically pleasing designs that enhance the user experience and elevate brand identity.",
-    twitter: "https://twitter.com/alicejohnson",
-    linkedin: "https://linkedin.com/in/alicejohnson",
-    github: "https://github.com/alicejohnson",
-  },
+  // {
+  //   name: "Alice Johnson",
+  //   role: "Design Lead",
+  //   image: "/images/alice.jpg",
+  //   bio: "Award-winning designer with a keen eye for user-centric experiences.",
+  //   bio1: "An award-winning designer with a sharp eye for user-centric experiences and a deep understanding of the intersection between art and technology. Alice crafts intuitive, aesthetically pleasing designs that enhance the user experience and elevate brand identity.",
+  //   twitter: "https://twitter.com/alicejohnson",
+  //   linkedin: "https://linkedin.com/in/alicejohnson",
+  //   github: "https://github.com/alicejohnson",
+  // },
   {
     name: "Usman Rasheed",
-    role: "Marketing Director",
+    role: "Sales & Marketing Director",
     image: "/images/usman.jpg",
     bio: "Strategic thinker driving brand growth and customer engagement.",
     bio1: "A strategic marketing expert with a knack for creating powerful brand narratives and building meaningful customer relationships. Usman excels in turning data-driven insights into impactful marketing strategies that drive growth and engagement.",
@@ -342,9 +342,10 @@ const AboutUs = () => {
                   transition={{ duration: 0.5, delay: 0.1 }}
                   className="text-gray-400 text-lg text-justify"
                 >
-                  Founded in 2020, we embarked on a mission to transform the
-                  digital landscape with innovative solutions that drive success
-                  in the digital age. Our journey has been marked by a
+                  Founded in 2020, we are US registered digital and automation
+                  firm formed in TEXAS, which embarked on a mission to transform
+                  the digital landscape with innovative solutions that drive
+                  success in the digital age. Our journey has been marked by a
                   commitment to creative excellence, continuous learning, and
                   constant evolution.
                 </motion.p>
@@ -354,12 +355,12 @@ const AboutUs = () => {
                   transition={{ duration: 0.5, delay: 0.2 }}
                   className="text-gray-400 text-lg pb-8 text-justify"
                 >
-                  Today, we're proud to have empowered numerous brands with our
-                  cutting-edge digital strategies, seamless web experiences, and
-                  user-centric designs. Our diverse team of experts continues to
-                  push the boundaries of what's possible, staying ahead of the
-                  curve and delivering impactful digital solutions that shape
-                  the future.
+                  Today, we're proud to have empowered numerous businesses with
+                  our cutting-edge digital strategies, seamless web experiences,
+                  automated accounting and book-keeping and user-centric
+                  designs. Our diverse team of experts continues to push the
+                  boundaries of what's possible, staying ahead of the curve and
+                  delivering impactful digital solutions that shape the future.
                 </motion.p>
 
                 <Link href="/case-study">
@@ -538,7 +539,7 @@ const AboutUs = () => {
             >
               Meet Our Team
             </motion.h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
               {teamMembers.map((member, index) => (
                 <motion.div
                   key={member.name}

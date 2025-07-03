@@ -14,7 +14,7 @@ export const metadata = {
       'mobile app portfolio'
     ],
     openGraph: {
-      title: 'Digital Success Stories - Digital Pulse 360 Portfolio',
+      title: 'Digital Success Stories | Digital Pulse 360 Portfolio',
       description: 'Discover how Digital Pulse 360 transforms businesses through innovative digital solutions. Real results, real success stories.',
       url: 'https://digitalpulse360.com/case-study',
       siteName: 'Digital Pulse 360',

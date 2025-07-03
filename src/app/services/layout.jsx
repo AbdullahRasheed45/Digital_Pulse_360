@@ -14,7 +14,7 @@ export const metadata = {
       'digital transformation'
     ],
     openGraph: {
-      title: 'Digital Services - Digital Pulse 360',
+      title: 'Digital Services | Digital Pulse 360',
       description: 'Comprehensive digital services including web development, mobile apps, SEO, social media marketing, UI/UX design, and market analytics. Transform your digital presence with Digital Pulse 360.',
       url: 'https://digitalpulse360.com/services',
       siteName: 'Digital Pulse 360',

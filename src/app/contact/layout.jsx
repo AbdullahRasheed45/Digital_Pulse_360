@@ -1,5 +1,5 @@
 export const metadata = {
-    title: 'Contact Digital Pulse 360 | Get in Touch for Digital Solutions',
+    title: 'Contact | Digital Pulse 360 | Get in Touch for Digital Solutions',
     description: 'Connect with Digital Pulse 360 for web development, mobile apps, SEO, and digital marketing solutions. Let\'s discuss your next digital project and transform your online presence.',
     keywords: [
       'contact Digital Pulse 360',

@@ -1,5 +1,14 @@
-import Link from "next/link"
-import { Mail, MapPin, Phone, ArrowUpRight, Linkedin, Instagram, Twitter, Facebook } from "lucide-react"
+import Link from "next/link";
+import {
+  Mail,
+  MapPin,
+  Phone,
+  ArrowUpRight,
+  Linkedin,
+  Instagram,
+  Twitter,
+  Facebook,
+} from "lucide-react";
 
 export default function Footer() {
   return (
@@ -12,10 +21,12 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand Section */}
           <div className="space-y-6">
-            <h2 className="text-2xl font-bold tracking-tight">DIGITAL PULSE 360</h2>
+            <h2 className="text-2xl font-bold tracking-tight">
+              DIGITAL PULSE 360 LLC
+            </h2>
             <p className="text-gray-400 max-w-sm">
-              Transforming digital landscapes with innovative solutions and creative excellence. Your success is our
-              pulse.
+              Transforming digital landscapes with innovative solutions and
+              creative excellence. Your success is our pulse.
             </p>
             <div className="flex items-center space-x-4">
               <Link
@@ -65,27 +76,42 @@ export default function Footer() {
             <h3 className="text-lg font-semibold">Quick Links</h3>
             <ul className="space-y-3">
               <li>
-                <Link href="/about" className="text-gray-400 hover:text-white transition-colors">
+                <Link
+                  href="/about"
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
                   About Us
                 </Link>
               </li>
               <li>
-                <Link href="/services" className="text-gray-400 hover:text-white transition-colors">
+                <Link
+                  href="/services"
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
                   Services
                 </Link>
               </li>
               <li>
-                <Link href="/portfolio" className="text-gray-400 hover:text-white transition-colors">
+                <Link
+                  href="/portfolio"
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
                   Portfolio
                 </Link>
               </li>
               <li>
-                <Link href="/careers" className="text-gray-400 hover:text-white transition-colors">
+                <Link
+                  href="/careers"
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
                   Blog
                 </Link>
               </li>
               <li>
-                <Link href="/blog" className="text-gray-400 hover:text-white transition-colors">
+                <Link
+                  href="/blog"
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
                   Contact
                 </Link>
               </li>
@@ -97,27 +123,42 @@ export default function Footer() {
             <h3 className="text-lg font-semibold">Services</h3>
             <ul className="space-y-3">
               <li>
-                <Link href="/services/web-development" className="text-gray-400 hover:text-white transition-colors">
+                <Link
+                  href="/services/web-development"
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
                   Web Development
                 </Link>
               </li>
               <li>
-                <Link href="/services/digital-marketing" className="text-gray-400 hover:text-white transition-colors">
+                <Link
+                  href="/services/digital-marketing"
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
                   Digital Marketing
                 </Link>
               </li>
               <li>
-                <Link href="/services/ui-ux" className="text-gray-400 hover:text-white transition-colors">
+                <Link
+                  href="/services/ui-ux"
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
                   UI/UX Design
                 </Link>
               </li>
               <li>
-                <Link href="/services/branding" className="text-gray-400 hover:text-white transition-colors">
+                <Link
+                  href="/services/branding"
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
                   Branding
                 </Link>
               </li>
               <li>
-                <Link href="/services/seo" className="text-gray-400 hover:text-white transition-colors">
+                <Link
+                  href="/services/seo"
+                  className="text-gray-400 hover:text-white transition-colors"
+                >
                   SEO Optimization
                 </Link>
               </li>
@@ -130,7 +171,17 @@ export default function Footer() {
             <ul className="space-y-3">
               <li className="flex items-center space-x-3 text-gray-400 hover:text-white transition-colors group">
                 <Mail className="w-5 h-5 text-blue-500 group-hover:text-blue-400" />
-                <a href="mailto:hello@digitalpulse360.com">contact@digitalpulse360.com</a>
+                <a href="mailto:hello@digitalpulse360.com">
+                  contact@digitalpulse360.com
+                </a>
+              </li>
+              {/* <li className="flex items-center space-x-3 text-gray-400 hover:text-white transition-colors group">
+                <Phone className="w-5 h-5 text-blue-500 group-hover:text-blue-400" />
+                <a href="tel:+1234567890">+1 (234) 567-890</a>
+              </li> */}
+              <li className="flex items-center space-x-3 text-gray-400 hover:text-white transition-colors group">
+                <MapPin className="w-5 h-5 text-blue-500 group-hover:text-blue-400" />
+                <span>2306 Oak Manor Arlington, TX 76012</span>
               </li>
             </ul>
             <div className="pt-4">
@@ -146,21 +197,32 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="mt-16 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-          <p className="text-gray-400 text-sm">© {new Date().getFullYear()} Digital Pulse 360. All rights reserved.</p>
+          <p className="text-gray-400 text-sm">
+            © {new Date().getFullYear()} Digital Pulse 360 LLC. IRS & GAAP
+            Compliant. All rights reserved.
+          </p>
           <div className="flex space-x-6 text-sm">
-            <Link href="/privacy" className="text-gray-400 hover:text-white transition-colors">
+            <Link
+              href="/privacy"
+              className="text-gray-400 hover:text-white transition-colors"
+            >
               Privacy Policy
             </Link>
-            <Link href="/terms" className="text-gray-400 hover:text-white transition-colors">
+            <Link
+              href="/terms"
+              className="text-gray-400 hover:text-white transition-colors"
+            >
               Terms of Service
             </Link>
-            <Link href="/cookies" className="text-gray-400 hover:text-white transition-colors">
+            <Link
+              href="/cookies"
+              className="text-gray-400 hover:text-white transition-colors"
+            >
               Cookie Policy
             </Link>
           </div>
         </div>
       </div>
     </footer>
-  )
+  );
 }
-

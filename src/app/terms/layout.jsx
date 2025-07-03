@@ -14,7 +14,7 @@ export const metadata = {
       'user rights'
     ],
     openGraph: {
-      title: 'Terms & Privacy Policy - Digital Pulse 360',
+      title: 'Terms & Privacy Policy | Digital Pulse 360',
       description: 'Important information about your rights, our data practices, and terms of service.',
       url: 'https://digitalpulse360.com/terms',
       siteName: 'Digital Pulse 360',
