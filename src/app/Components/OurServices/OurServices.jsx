@@ -1,122 +1,129 @@
-"use client";
-import React from "react";
-import {
-  ArrowLongRightIcon,
-  ComputerDesktopIcon,
-  DocumentMagnifyingGlassIcon,
-  SwatchIcon,
-} from "@heroicons/react/24/solid";
+"use client"
+
+import { useState, useEffect } from "react"
+import { ArrowRight } from 'lucide-react'
+import Link from "next/link"
+import { services as servicesData} from "./lib/services"
 import CaseStudy from "../CaseStudy/CaseStudy"
 
-
 const OurServices = () => {
+  const [activeService, setActiveService] = useState(null)
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
+
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      setMousePosition({ x: e.clientX, y: e.clientY })
+    }
+
+    window.addEventListener("mousemove", handleMouseMove)
+
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove)
+    }
+  }, [])
+
+  // Map the imported services data to include the link property
+  const services = servicesData.map(service => ({
+    ...service,
+    link: `/services/${service.slug}`,
+  }))
+
   return (
     <>
-    <div className="grid grid-cols-1 md:grid-cols-3 py-20 px-16 gap-14 bg-gradient-to-l from-[#f0fefffa] to-[#e6eded] ">
-      <div className="rounded-3xl border border-solid border-[#ccc495fa] hover:border-none hover:bg-gradient-to-r hover:from-[#d2d285] hover:to-[#c9d7f6] hover:p-1 hover:ease-in hover:duration-500">
-        <div className="bg-gradient-to-l from-[#797356fa] to-[#cda521] flex items-center justify-center p-2 text-center w-16 h-[4.25rem] ml-8 mt-14 rounded-2xl">
-          <DocumentMagnifyingGlassIcon className="w-14 text-center text-[#271111]" />
-        </div>
-        <h1 className="p-8 font-extrabold text-2xl tracking-wide">
-          UI/UX & Product Design
-        </h1>
-        <p className="pl-8 pb-8 pr-5 text-base">
-          Elevate user experiences with our cutting-edge UI/UX and product
-          design solutions, seamlessly blending aesthetics and functionality to
-          captivate your audience.
-        </p>
-        <button className="flex border-[#ccc495fa] rounded-full border items-center justify-center text-lg font-semibold pl-8 pr-5 ml-8 mb-6 hover:bg-gradient-to-r from-[#797356fa] to-[#cda521]">
-          Start Project <ArrowLongRightIcon className="ml-2 w-12" />
-        </button>
+    <section className="w-full bg-[#1C1C1C] py-24 px-4 relative overflow-hidden" aria-labelledby="services-title">
+      {/* Interactive background */}
+      <div className="absolute inset-0 opacity-10">
+        <div
+          className="absolute inset-0 bg-[#4646ff] mix-blend-multiply filter blur-[100px]"
+          style={{
+            clipPath: `circle(15% at ${mousePosition.x}px ${mousePosition.y}px)`,
+            transition: "clip-path 0.3s ease-out",
+          }}
+        ></div>
       </div>
-      <div className="rounded-3xl border border-solid border-[#ccc495fa] hover:border-none hover:bg-gradient-to-r from-[#d2d285] to-[#c9d7f6] hover:p-1">
-        <div className="bg-gradient-to-l from-[#797356fa] to-[#cda521] text-center flex items-center justify-center p-2 w-16 h-[4.25rem] ml-8 mt-14 rounded-2xl">
-          <SwatchIcon className="w-14 text-center text-[#271111]" />
-        </div>
-        <h1 className="p-8 font-extrabold text-2xl tracking-wide">
-          Web Application & Development
-        </h1>
-        <p className="pl-8 pb-8 pr-5">
-          Transform your vision into reality with our expert web application and
-          development services, crafting robust digital solutions that empower
-          your online presence.
-        </p>
-        <button className="flex border-[#ccc495fa] rounded-full border items-center justify-center text-lg font-semibold pl-8 pr-5 ml-8 mb-6 hover:bg-gradient-to-r from-[#797356fa] to-[#cda521]">
-          Start Project{" "}
-          <ArrowLongRightIcon className="ml-2 w-12 text-[#271111]" />
-        </button>
-      </div>
-      <div className="rounded-3xl border border-solid border-[#ccc495fa] hover:border-none hover:bg-gradient-to-r from-[#d2d285] to-[#c9d7f6] hover:p-1">
-        <div className="bg-gradient-to-l from-[#797356fa] to-[#cda521] text-center flex items-center justify-center p-2 w-16 h-[4.25rem] ml-8 mt-14 rounded-2xl">
-          <ComputerDesktopIcon className="w-14 text-center" />
-        </div>
-        <h1 className="p-8 font-extrabold text-2xl tracking-wide">
-          SEO Optimization
-        </h1>
-        <p className="pl-8 pb-8 pr-5">
-          Boost your online visibility and rankings with our comprehensive SEO
-          optimization strategies, tailored to enhance your website's
-          performance and drive targeted traffic.
-        </p>
-        <button className="flex border-[#ccc495fa] rounded-full border items-center justify-center text-lg font-semibold pl-8 pr-5 ml-8 mb-6 hover:bg-gradient-to-r from-[#797356fa] to-[#cda521]">
-          Start Project <ArrowLongRightIcon className="ml-2 w-12" />
-        </button>
-      </div>
-    </div>
-    <div className="grid grid-cols-1 md:grid-cols-3 -my-10 pb-28 px-16 gap-14 bg-gradient-to-l from-[#f0fefffa] to-[#e6eded] ">
-      <div className="rounded-3xl border border-solid border-[#ccc495fa] hover:border-none hover:bg-gradient-to-r hover:from-[#d2d285] hover:to-[#c9d7f6] hover:p-1 hover:ease-in hover:duration-500">
-        <div className="bg-gradient-to-l from-[#797356fa] to-[#cda521] flex items-center justify-center p-2 text-center w-16 h-[4.25rem] ml-8 mt-14 rounded-2xl">
-          <DocumentMagnifyingGlassIcon className="w-14 text-center text-[#271111]" />
-        </div>
-        <h1 className="p-8 font-extrabold text-2xl tracking-wide">
-          Mobile App Development
-        </h1>
-        <p className="pl-8 pb-8 pr-5 text-base">
-          Elevate user experiences with our cutting-edge UI/UX and product
-          design solutions, seamlessly blending aesthetics and functionality to
-          captivate your audience.
-        </p>
-        <button className="flex border-[#ccc495fa] rounded-full border items-center justify-center text-lg font-semibold pl-8 pr-5 ml-8 mb-6 hover:bg-gradient-to-r from-[#797356fa] to-[#cda521]">
-          Start Project <ArrowLongRightIcon className="ml-2 w-12" />
-        </button>
-      </div>
-      <div className="rounded-3xl border border-solid border-[#ccc495fa] hover:border-none hover:bg-gradient-to-r from-[#d2d285] to-[#c9d7f6] hover:p-1">
-        <div className="bg-gradient-to-l from-[#797356fa] to-[#cda521] text-center flex items-center justify-center p-2 w-16 h-[4.25rem] ml-8 mt-14 rounded-2xl">
-          <SwatchIcon className="w-14 text-center text-[#271111]" />
-        </div>
-        <h1 className="p-8 font-extrabold text-2xl tracking-wide">
-          Consulting and Maintainance
-        </h1>
-        <p className="pl-8 pb-8 pr-5">
-          Transform your vision into reality with our expert web application and
-          development services, crafting robust digital solutions that empower
-          your online presence.
-        </p>
-        <button className="flex border-[#ccc495fa] rounded-full border items-center justify-center text-lg font-semibold pl-8 pr-5 ml-8 mb-6 hover:bg-gradient-to-r from-[#797356fa] to-[#cda521]">
-          Start Project{" "}
-          <ArrowLongRightIcon className="ml-2 w-12 text-[#271111]" />
-        </button>
-      </div>
-      <div className="rounded-3xl border border-solid border-[#ccc495fa] hover:border-none hover:bg-gradient-to-r from-[#d2d285] to-[#c9d7f6] hover:p-1">
-        <div className="bg-gradient-to-l from-[#797356fa] to-[#cda521] text-center flex items-center justify-center p-2 w-16 h-[4.25rem] ml-8 mt-14 rounded-2xl">
-          <ComputerDesktopIcon className="w-14 text-center" />
-        </div>
-        <h1 className="p-8 font-extrabold text-2xl tracking-wide">
-          Market Analytics & Reporting
-        </h1>
-        <p className="pl-8 pb-8 pr-5">
-          Boost your online visibility and rankings with our comprehensive SEO
-          optimization strategies, tailored to enhance your website's
-          performance and drive targeted traffic.
-        </p>
-        <button className="flex border-[#ccc495fa] rounded-full border items-center justify-center text-lg font-semibold pl-8 pr-5 ml-8 mb-6 hover:bg-gradient-to-r from-[#797356fa] to-[#cda521]">
-          Start Project <ArrowLongRightIcon className="ml-2 w-12" />
-        </button>
-      </div>
-    </div>
-  {/* <CaseStudy/> */}
-  </>
-  );
-};
 
-export default OurServices;
+      <div className="container mx-auto relative z-10">
+        <h2
+          id="services-title"
+          className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 tracking-tight text-center"
+        >
+          Innovative Digital Solutions
+        </h2>
+        <p className="text-gray-400 max-w-3xl mx-auto text-lg md:text-xl text-center mb-16 leading-relaxed">
+          Empower your business with our comprehensive suite of digital services. From stunning designs to cutting-edge
+          development, we deliver tailored solutions that drive growth and innovation.
+        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {services.map((service, index) => (
+            <div
+              key={index}
+              className="group relative transform transition-all duration-300 hover:scale-105 cursor-pointer"
+              onMouseEnter={() => setActiveService(index)}
+              onMouseLeave={() => setActiveService(null)}
+            >
+              <div className="bg-[#232323] p-8 rounded-xl relative overflow-hidden transition-all duration-300 hover:bg-[#282828] border border-transparent hover:border-[#4646ff]/30 h-full flex flex-col">
+                {/* Animated background */}
+                <div
+                  className="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-300"
+                  style={{
+                    background: `radial-gradient(circle at 50% 50%, ${service.color}, transparent 70%)`,
+                    animation: "pulse 2s infinite",
+                  }}
+                ></div>
+
+                {/* Icon */}
+                <div className="w-20 h-20 rounded-2xl bg-[#2a2a2a] flex items-center justify-center mb-6 group-hover:bg-[#4646ff]/10 transition-all duration-300 group-hover:shadow-lg group-hover:shadow-[#4646ff]/20">
+                  <service.icon
+                    className="w-10 h-10 transition-all duration-300 transform group-hover:scale-110"
+                    style={{ color: service.color }}
+                  />
+                </div>
+
+                <h3 className="text-2xl font-bold text-white mb-4 group-hover:text-[#4646ff] transition-colors duration-300">
+                  {service.title}
+                </h3>
+                <p className="text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors duration-300 flex-grow">
+                  {activeService === index ? service.longDescription : service.shortDescription}
+                </p>
+
+                <Link
+                  href={service.link}
+                  className="mt-6 inline-flex items-center justify-center text-[#4646ff] font-semibold group-hover:text-white transition-colors duration-300 relative overflow-hidden"
+                >
+                  <span className="pl-4 relative z-10">Explore {service.title}</span>
+                  <ArrowRight className=" w-8 h-10 transition-transform duration-300 transform group-hover:translate-x-1 relative z-10" />
+                  <div className="absolute inset-0 bg-[#4646ff] hover:border hover:rounded-[50%] transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
+                </Link>
+
+                {/* Hover border effect */}
+                <div className="absolute inset-0 border-2 border-transparent group-hover:border-[#4646ff] rounded-xl transition-all duration-300 opacity-0 group-hover:opacity-100"></div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <style jsx>{`
+        @keyframes pulse {
+          0% {
+            transform: scale(0.8);
+            opacity: 0;
+          }
+          50% {
+            transform: scale(1);
+            opacity: 0.2;
+          }
+          100% {
+            transform: scale(1.2);
+            opacity: 0;
+          }
+        }
+      `}</style>
+    </section>
+    <CaseStudy/>
+    </>
+  )
+}
+
+export default OurServices

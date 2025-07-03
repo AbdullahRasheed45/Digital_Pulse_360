@@ -1,251 +1,254 @@
-"use client";
-import React, { useState, useEffect, useRef } from "react";
-import { Parallax, ParallaxLayer } from "@react-spring/parallax";
-import Link from "next/link";
-import { space } from "postcss/lib/list";
+"use client"
+
+import { useState, useEffect, useRef } from "react"
+import { motion, useScroll } from "framer-motion"
+import Link from "next/link"
+import { CounterSection } from "../CounterSection/CounterSection"
+
+const caseStudies = [
+  {
+    title: "Website Development",
+    image: "/images/CaseStudy1.jpg",
+    gradient: "from-[#4338CA] to-[#6366F1]",
+    color: "#4338CA",
+    description: "Creating powerful digital experiences",
+  },
+  {
+    title: "UI/UX Design",
+    image: "/images/CaseStudy2.jpg",
+    gradient: "from-[#3730A3] to-[#4338CA]",
+    color: "#3730A3",
+    description: "Crafting intuitive user interfaces",
+  },
+  {
+    title: "Mobile App Development",
+    image: "/images/CaseStudy3.jpg",
+    gradient: "from-[#312E81] to-[#3730A3]",
+    color: "#312E81",
+    description: "Building next-gen mobile solutions",
+  },
+  {
+    title: "Consulting and Maintenance",
+    image: "/images/CaseStudy4.jpg",
+    gradient: "from-[#1E3A8A] to-[#2563EB]",
+    color: "#1E3A8A",
+    description: "Ensuring sustainable growth",
+  },
+  {
+    title: "SEO & Marketing",
+    image: "/images/CaseStudy5.jpg",
+    gradient: "from-[#1E40AF] to-[#3B82F6]",
+    color: "#1E40AF",
+    description: "Maximizing digital presence",
+  },
+  {
+    title: "Market Analytics & Reporting",
+    image: "/images/CaseStudy6.jpg",
+    gradient: "from-[#1D4ED8] to-[#60A5FA]",
+    color: "#1D4ED8",
+    description: "Data-driven insights",
+  },
+]
+
 
 const CaseStudy = () => {
-  const parallaxRef = useRef()
-  const [isMobile, setIsMobile] = useState(false);
+  const containerRef = useRef(null)
+  const [activeIndex, setActiveIndex] = useState(0)
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start start", "end end"],
+  })
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      setIsMobile(window.innerWidth > 767);
+    const handleScroll = () => {
+      if (!containerRef.current) return
+      const { top, height } = containerRef.current.getBoundingClientRect()
+      const scrollPosition = -top
+      const sectionHeight = height / caseStudies.length
+      const newIndex = Math.min(Math.max(Math.floor(scrollPosition / sectionHeight), 0), caseStudies.length - 1)
+      setActiveIndex(newIndex)
     }
 
-    const handleResize = () => {
-      setIsMobile(window.innerWidth > 767);
-    };
-    window.addEventListener("resize", handleResize);
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-  return (
-    <div className="w-full h-full bg-gradient-to-l from-[#1e3350] to-[#0A1320] py-12 md:py-32 relative">
-      <div className="block md:flex items-center justify-between w-full gap-40">
-        <div className="w-full flex flex-col gap-12 md:w-1/2 p-20">
-          <h1 className="text-white text-5xl font-black tracking-wider text-left">
-            Case Studies
-          </h1>
-          <p className="text-[#a8a8a8] text-base font-medium tracking-wide leading-7 text-left">
-            We specialize in empowering businesses to thrive and expand. Explore
-            a showcase of our accomplishments.
-          </p>
-          <div className="flex flex-col md:flex-row md:flex-wrap md:items-center md:justify-start gap-6">
-            <button className="border border-white border-solid px-6 py-4 md:text-white font-black md:font-bold tracking-wider bg-white text-[#222c3b] rounded-full md:bg-transparent md:hover:bg-white md:hover:text-[#222c3b] hover:border-none hover:font-black">
-              CASE STUDIES
-            </button>
-            <button className="border border-white border-solid px-6 py-4 md:text-white font-black md:font-bold tracking-wider bg-white text-[#222c3b] rounded-full md:bg-transparent md:hover:bg-white md:hover:text-[#222c3b] hover:border-none hover:font-black">
-              START PROJECT
-            </button>
-          </div>
-        </div>
-        <div className="w-full md:w-1/2 h-full">
-          {isMobile ? (
-            <Parallax pages={5} className="md:top-40 block rounded-3xl transition ease-in-out duration-1000"  style={{backgroundSize: "40%", height: "55%"}} >
-              <ParallaxLayer
-                offset={0}
-                ref={parallaxRef} 
-                className="transition ease-in-out duration-1000"
-                style={{
-                  backgroundSize: "40%",
-                  backgroundImage: "url('/images/CaseStudy1.jpg')",
-                }}
-              >
-                <div className="relative top-[-30px] left-[-35px] text-4xl z-40 px-10 pt-10 pb-5 rounded-s-xl rounded-[100%] text-white bg-gradient-to-l from-[#00c3ff] to-[#010131] bg-black w-[18rem] pr-32 shadow-2xl shadow-black">
-                  <Link href="/">
-                    <h1 className="text-3xl font-black px-2">
-                      Website Development
-                    </h1>
-                  </Link>
-                </div>
-              </ParallaxLayer>
-                <ParallaxLayer
-                  offset={1}
-                  ref={parallaxRef} 
-                  className="transition ease-in-out duration-1000"
-                  style={{
-                    backgroundSize: "40%",
-                    backgroundImage: "url('/images/CaseStudy2.jpg')",
-                  }}
-                >
-                  <div className="relative top-[-30px] left-[-35px] text-4xl z-40 px-10 pt-4 pb-5 rounded-s-xl rounded-[100%] text-white bg-gradient-to-l from-[#00c3ff] to-[#010131] bg-black w-[18rem] pr-10 shadow-2xl shadow-black">
-                    <Link href="/">
-                      <h1 className="text-3xl font-black px-2">
-                      UI/UX Design
-                      </h1>
-                    </Link>
-                  </div>
-                </ParallaxLayer>
-              <ParallaxLayer
-                offset={2}
-                className="transition ease-in-out duration-1000 gap-0"
-                style={{
-                  transition: "ease-in-out 1s",
-                  backgroundSize: "40%",
-                  backgroundImage: "url('/images/CaseStudy3.jpg   ' )",
-                }}
-              >
-                <div className="relative top-[-30px] left-[-35px] text-3xl z-40 px-10 pt-6 pb-5 rounded-s-xl rounded-[100%] text-white bg-gradient-to-l from-[#00c3ff] to-[#010131] bg-black w-[18rem] pr-16 shadow-2xl shadow-black">
-                  <Link href="/">
-                    <h1 className="text-2xl font-black px-2">
-                     Mobile App Development
-                    </h1>
-                  </Link>
-                </div>
-              </ParallaxLayer>
-              <ParallaxLayer
-                offset={3}
-                className="transition ease-in-out duration-1000 gap-0"
-                style={{
-                  transition: "ease-in-out 1s",
-                  backgroundSize: "40%",
-                  backgroundImage: "url('/images/CaseStudy4.jpg   ' )",
-                }}
-              >
-                <div className="relative top-[-30px] left-[-35px] text-3xl z-40 px-10 pt-6 pb-5 rounded-s-xl rounded-[100%] text-white bg-gradient-to-l from-[#00c3ff] to-[#010131] bg-black w-[18rem] pr-2 shadow-2xl shadow-black">
-                  <Link href="/">
-                    <h1 className="text-2xl font-black px-2">
-                     Consulting and Maintainance 
-                    </h1>
-                  </Link>
-                </div>
-              </ParallaxLayer>
-              <ParallaxLayer
-                offset={4}
-                className="transition ease-in-out duration-1000 gap-0"
-                style={{
-                  transition: "ease-in-out 1s",
-                  backgroundSize: "40%",
-                  backgroundImage: "url('/images/CaseStudy5.jpg   ' )",
-                }}
-              >
-                <div className="relative top-[-30px] left-[-35px] text-3xl z-40 px-10 py-7 rounded-s-xl rounded-[100%] text-white bg-gradient-to-l from-[#00c3ff] to-[#010131] bg-black w-[18rem] pr-2 shadow-2xl shadow-black">
-                  <Link href="/">
-                    <h1 className="text-2xl font-black px-2">
-                     SEO & Marketing
-                    </h1>
-                  </Link>
-                </div>
-              </ParallaxLayer>
-              <ParallaxLayer
-                offset={5}
-                className="transition ease-in-out duration-1000 gap-0"
-                style={{
-                  transition: "ease-in-out 1s",
-                  backgroundSize: "40%",
-                  backgroundImage: "url('/images/CaseStudy6.jpg   ' )",
-                }}
-              >
-                <div className="relative top-[-30px] left-[-35px] text-3xl z-40 px-10 pt-6 pb-5 rounded-s-xl rounded-[100%] text-white bg-gradient-to-l from-[#00c3ff] to-[#010131] bg-black w-[18rem] pr-2 shadow-2xl shadow-black">
-                  <Link href="/">
-                    <h1 className="text-2xl font-black px-2">
-                     Market Analytics & Reporting
-                    </h1>
-                  </Link>
-                </div>
-              </ParallaxLayer>
-            </Parallax>
-          ) : (
-            <Parallax pages={6} className="md:top-40 block rounded-3xl transition ease-in-out duration-1000 bg-gradient-to-l from-[#1e3350] to-[#0A1320]"  style={{backgroundSize: "40%", height: "55%"}} >
-              <ParallaxLayer
-                offset={0}
-                style={{
-                  backgroundSize: "100%",
-                  backgroundImage: "url('/images/CaseStudy1.jpg   ')",
-                }}
-              >
-                <div className="relative top-[-30px] left-[-35px] text-4xl z-40 px-10 pt-10 pb-2 rounded-s-xl rounded-[100%] text-white bg-gradient-to-l from-[#00c3ff] to-[#010131] bg-black w-[18rem] pr-32 shadow-2xl shadow-black">
-                  <Link href="/">
-                    <h1 className="text-2xl font-black px-2">
-                      Website Development
-                    </h1>
-                  </Link>
-                </div>
-              </ParallaxLayer>
-              <ParallaxLayer
-                offset={1}
-                style={{
-                  backgroundSize: "100%",
-                  backgroundImage: "url('/images/CaseStudy2.jpg   ')",
-                }}
-              >
-                <div className="relative top-[-30px] left-[-35px] text-4xl z-40 px-10 pt-3 pb-3 rounded-s-xl rounded-[100%] text-white bg-gradient-to-l from-[#00c3ff] to-[#010131] bg-black w-[18rem] pr-4 shadow-2xl shadow-black">
-                  <Link href="/">
-                    <h1 className="text-2xl font-black px-2">
-                      UI/UX Design
-                    </h1>
-                  </Link>
-                </div>
-              </ParallaxLayer>
-              <ParallaxLayer
-                offset={2}
-                style={{
-                  backgroundSize: "100%",
-                  backgroundImage: "url('/images/CaseStudy3.jpg   ')",
-                }}
-              >
-                <div className="relative top-[-30px] left-[-35px] text-4xl z-40 px-10 pt-3 pb-3 rounded-s-xl rounded-[100%] text-white bg-gradient-to-l from-[#00c3ff] to-[#010131] bg-black w-[18rem] pr-4 shadow-2xl shadow-black">
-                  <Link href="/">
-                    <h1 className="text-2xl font-black px-2">
-                    Mobile App Development
+    const handleMouseMove = (e) => {
+      setMousePosition({ x: e.clientX, y: e.clientY })
+    }
 
-                    </h1>
-                  </Link>
+    window.addEventListener("scroll", handleScroll)
+    window.addEventListener("mousemove", handleMouseMove)
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll)
+      window.removeEventListener("mousemove", handleMouseMove)
+    }
+  }, [])
+
+  return (
+    <>
+    <div className="bg-[#1C1C1C] relative">
+      <div ref={containerRef} className="min-h-[600vh] relative pb-[10vh]">
+        <motion.div className="sticky top-0 left-0 w-full min-h-screen flex items-center justify-center py-16 md:py-24">
+        <div className="absolute inset-0 opacity-10">
+            <div
+              className="absolute inset-0 bg-[#4646ff] mix-blend-multiply filter blur-[100px]"
+              style={{
+                clipPath: `circle(15% at ${mousePosition.x}px ${mousePosition.y}px)`,
+                transition: "clip-path 0.3s ease-out",
+              }}
+            />
+          </div>
+
+          {/* Geometric Decorations */}
+          <div className="absolute top-40 left-10 w-32 h-32 bg-gradient-to-br from-[#4646ff]/20 to-transparent rounded-xl transform rotate-45" />
+          <div className="absolute bottom-20 right-10 w-40 h-40 bg-gradient-to-bl from-[#4646ff]/10 to-transparent rounded-xl transform -rotate-12" />
+          <div className="container mx-auto px-6 md:px-8 lg:px-12">
+            {/* Mobile Header */}
+            <div className="lg:hidden mb-8 space-y-4">
+              <h1 className="text-4xl font-bold text-white">Case Studies</h1>
+              <p className="text-gray-400 text-lg">We're in the business of helping companies grow. Here is some of our work.</p>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+              {/* Left Content - Desktop */}
+              <div className="hidden lg:block space-y-12 relative z-10">
+                <div className="space-y-6">
+                  <motion.h1
+                    className="text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-[#4338CA]"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8 }}
+                  >
+                    Case Studies
+                  </motion.h1>
+                  <p className="text-xl text-gray-400 max-w-xl leading-relaxed">
+                  We're in the business of helping companies grow. Here is some of our work.
+                  </p>
                 </div>
-              </ParallaxLayer>
-              <ParallaxLayer
-                offset={3}
-                style={{
-                  backgroundSize: "100%",
-                  backgroundImage: "url('/images/CaseStudy4.jpg   ')",
-                }}
-              >
-                <div className="relative top-[-30px] left-[-35px] text-4xl z-40 px-10 pt-3 pb-3 rounded-s-xl rounded-[100%] text-white bg-gradient-to-l from-[#00c3ff] to-[#010131] bg-black w-[18rem] pr-4 shadow-2xl shadow-black">
-                  <Link href="/">
-                    <h1 className="text-2xl font-black px-2">
-                    Consulting and Maintainance
-                    </h1>
-                  </Link>
+
+                <div className="space-y-6">
+                  {caseStudies.map((study, index) => (
+                    <motion.div
+                      key={index}
+                      initial={false}
+                      animate={{
+                        opacity: activeIndex === index ? 1 : 0.3,
+                        x: activeIndex === index ? 20 : 0,
+                      }}
+                      transition={{ duration: 0.5 }}
+                      className="group cursor-pointer"
+                      onClick={() => {
+                        const targetScroll = (index * containerRef.current.scrollHeight) / caseStudies.length
+                        window.scrollTo({
+                          top: targetScroll + containerRef.current.offsetTop,
+                          behavior: "smooth",
+                        })
+                      }}
+                    >
+                      <div className="flex items-center gap-4 group-hover:opacity-100 transition-opacity">
+                        <motion.div
+                          className="h-0.5"
+                          animate={{
+                            width: activeIndex === index ? 100 : 40,
+                            backgroundColor: activeIndex === index ? study.color : "#333",
+                          }}
+                        />
+                        <div>
+                          <h3
+                            className="text-xl font-semibold transition-colors duration-300"
+                            style={{
+                              color: activeIndex === index ? study.color : "#fff",
+                            }}
+                          >
+                            {study.title}
+                          </h3>
+                          {activeIndex === index && <p className="text-sm text-gray-400 mt-1">{study.description}</p>}
+                        </div>
+                      </div>
+                    </motion.div>
+                  ))}
                 </div>
-              </ParallaxLayer>
-              <ParallaxLayer
-                offset={4}
-                style={{
-                  backgroundSize: "100%",
-                  backgroundImage: "url('/images/CaseStudy5.jpg   ')",
-                }}
-              >
-                <div className="relative top-[-30px] left-[-35px] text-4xl z-40 px-10 pt-3 pb-3 rounded-s-xl rounded-[100%] text-white bg-gradient-to-l from-[#00c3ff] to-[#010131] bg-black w-[18rem] pr-4 shadow-2xl shadow-black">
-                  <Link href="/">
-                    <h1 className="text-2xl font-black px-2">
-                    SEO & Marketing
-                    </h1>
-                  </Link>
-                </div>
-              </ParallaxLayer>
-              <ParallaxLayer
-                offset={5}
-                style={{
-                  backgroundSize: "100%",
-                  backgroundImage: "url('/images/CaseStudy6.jpg   ')",
-                }}
-              >
-                <div className="relative top-[-30px] left-[-35px] text-4xl z-40 px-10 pt-3 pb-3 rounded-s-xl rounded-[100%] text-white bg-gradient-to-l from-[#00c3ff] to-[#010131] bg-black w-[18rem] pr-4 shadow-2xl shadow-black">
-                  <Link href="/">
-                    <h1 className="text-2xl font-black px-2">
-                    Market Analytics & Reporting
-                    </h1>
-                  </Link>
-                </div>
-              </ParallaxLayer>
-              </Parallax>
-          )}
-        </div>
+              </div>
+
+              {/* Image Container */}
+              <div className="relative h-[50vh] lg:h-[75vh] w-full">
+                {caseStudies.map((study, index) => (
+                  <motion.div
+                    key={index}
+                    className="absolute inset-0 w-full h-full"
+                    initial={false}
+                    animate={{
+                      opacity: activeIndex === index ? 1 : 0,
+                      scale: activeIndex === index ? 1 : 1.1,
+                      y: `${(index - activeIndex) * 100}%`,
+                    }}
+                    transition={{
+                      opacity: { duration: 0.8 },
+                      scale: { duration: 1.2 },
+                      y: { duration: 0.8, ease: [0.16, 1, 0.3, 1] },
+                    }}
+                  >
+                    <div className="relative h-full w-full rounded-2xl overflow-hidden shadow-2xl">
+                      <img
+                        src={study.image || "/placeholder.svg"}
+                        alt={study.title}
+                        className="h-full w-full object-cover"
+                      />
+
+                      {/* Service Badge */}
+                      <motion.div
+                        initial={{ x: -200, opacity: 0 }}
+                        animate={{
+                          x: activeIndex === index ? 0 : -200,
+                          opacity: activeIndex === index ? 1 : 0,
+                        }}
+                        transition={{ duration: 0.6, delay: 0.2 }}
+                        className="absolute top-8 left-0 z-10"
+                      >
+                        <div
+                          className={`bg-gradient-to-r ${study.gradient} 
+                            backdrop-blur-sm py-4 px-8 pr-16 rounded-r-[32px]
+                            shadow-lg border border-white/10`}
+                          style={{
+                            clipPath: "polygon(0 0, 100% 0, 95% 100%, 0% 100%)",
+                          }}
+                          >
+                          <h3 className="text-white font-bold text-2xl tracking-wide">{study.title}</h3>
+                        </div>
+                      </motion.div>
+
+                      {/* Bottom Content */}
+                      <motion.div
+                        initial={{ y: 100, opacity: 0 }}
+                        animate={{
+                          y: activeIndex === index ? 0 : 100,
+                          opacity: activeIndex === index ? 1 : 0,
+                        }}
+                        transition={{ duration: 0.5, delay: 0.3 }}
+                        className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black/90 via-black/50 to-transparent"
+                      >
+                        <div className="flex justify-end">
+                          <Link
+                            href="/case-study"
+                            className={`bg-gradient-to-r ${study.gradient} text-white px-8 py-3 
+                              rounded-full font-medium hover:shadow-lg hover:scale-105 
+                              transition-all duration-300 hover:brightness-110`}
+                          >
+                            View Case Study
+                          </Link>
+                        </div>
+                      </motion.div>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </div>
-  );
-};
+    <CounterSection/>
+                          </>
+  )
+}
 
-export default CaseStudy;
+export default CaseStudy

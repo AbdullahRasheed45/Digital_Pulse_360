@@ -3,16 +3,16 @@ import { Fragment, useEffect, useState } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3BottomLeftIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
-import Hero from "../Hero/Hero";
-import Hero2 from "../Hero2/Hero2"
-import TransitionSlide from "../TransitionSlide/TransitionSlide";
+import Image from "next/image";
+
 const navigation = [
-  { name: "About", href: "/", current: false },
-  { name: "Services", href: "/", current: false },
-  { name: "Portfolio", href: "/", current: false },
-  { name: "Contact Us", href: "/", current: false },
+  { name: "About", href: "/about", current: false },
+  { name: "Services", href: "/services", current: false },
+  { name: "Portfolio", href: "/case-study", current: false },
+  { name: "Blog", href: "/blog", current: false },
+  { name: "Contact Us", href: "/contact", current: false },
 ];
-const navigation2 = [{ name: "Log In", href: "/", current: false }];
+// const navigation2 = [{ name: "Log In", href: "/", current: false }];
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -41,8 +41,8 @@ const Navbar = () => {
         as="nav"
         className={
           color
-            ? "bg-[#333333] lg:bg-white fixed w-full lg:ease-out duration-1000 z-50"
-            : "bg-[#333333] sm:bg-[#1C1D21] fixed w-full lg:ease-in duration-1000 z-50"
+            ? "bg-[#333333] lg:bg-white fixed w-full lg:ease-out duration-1000 z-50 overflow-hidden"
+            : "bg-[#333333] sm:bg-[#1C1D21] fixed w-full lg:ease-in duration-1000 z-50 overflow-hidden"
         }
       >
         {({ open }) => (
@@ -63,13 +63,17 @@ const Navbar = () => {
                     )}
                   </Disclosure.Button>
                 </div>
-                <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+                <div className="flex flex-1 items-center justify-center mt-8 sm:items-stretch sm:justify-start">
                   <div className="flex flex-shrink-0 items-center">
-                    <img
-                      className="h-8 w-auto"
-                      src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
-                      alt="Your Company"
-                    />
+                    <Link href="/" className="relative w-48 h-48">
+                      <Image
+                        src="/images/Logo2.png"
+                        alt="Your Company"
+                        fill
+                        className="object-contain"
+                        unoptimized
+                      />
+                    </Link>
                   </div>
                 </div>
                 <div className="hidden sm:ml-6 sm:flex sm:flex-auto ">
@@ -85,7 +89,7 @@ const Navbar = () => {
                           "rounded-md px-3 py-2 text-sm font-medium",
                           color
                             ? "lg:text-black lg:hover:bg-slate-900 lg:hover:text-blue-400 "
-                            : "null"
+                            : ""
                         )}
                         aria-current={item.current ? "page" : undefined}
                       >
@@ -95,17 +99,19 @@ const Navbar = () => {
                   </div>
                 </div>
                 <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                  <button
-                    className={classNames(
-                      "hidden sm:block border px-5 py-2 rounded-3xl mr-3 text-white text-sm font-semibold bg-transparent  hover:bg-gray-800 hover:text-white hover:border-none",
-                      color
-                        ? "lg:text-black lg:border-black lg:hover:bg-slate-900  lg:hover:text-blue-400"
-                        : "null"
-                    )}
-                  >
-                    LET'S TALK
-                  </button>
-                  {navigation2.map((item) => (
+                  <Link href={"/contact"} passHref>
+                    <button
+                      className={classNames(
+                        "hidden sm:block border px-5 py-2 rounded-3xl mr-3 text-white text-sm font-semibold bg-transparent  hover:bg-gray-800 hover:text-white hover:border-none",
+                        color
+                          ? "lg:text-black lg:border-black lg:hover:bg-slate-900  lg:hover:text-blue-400"
+                          : "null"
+                      )}
+                    >
+                      LET'S TALK
+                    </button>
+                  </Link>
+                  {/* {navigation2.map((item) => (
                     <Link
                       key={item.name}
                       href={item.href}
@@ -122,9 +128,9 @@ const Navbar = () => {
                     >
                       {item.name}
                     </Link>
-                  ))}
+                  ))} */}
                   <Menu as="div" className="relative ml-5">
-                    <div>
+                    {/* <div>
                       <Menu.Button className="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                         <span className="absolute -inset-1.5" />
                         <span className="sr-only">Open user menu</span>
@@ -134,7 +140,7 @@ const Navbar = () => {
                           alt=""
                         />
                       </Menu.Button>
-                    </div>
+                    </div> */}
                     <Transition
                       as={Fragment}
                       enter="transition ease-out duration-100"
@@ -201,31 +207,29 @@ const Navbar = () => {
               <Disclosure.Panel className="sm:hidden">
                 <div className="space-y-1 px-2 pb-3 pt-2">
                   {navigation.map((item) => (
+                    <Link key={item.name} href={item.href}>
                     <Disclosure.Button
-                      key={item.name}
-                      as="Link"
-                      href={item.href}
                       className={classNames(
-                        item.current
-                          ? "bg-gray-900 text-white"
-                          : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                        item.current ? "bg-gray-900 text-white" : "text-gray-300 hover:bg-gray-700 hover:text-white",
                         "block rounded-md px-3 py-2 text-base font-medium"
                       )}
                       aria-current={item.current ? "page" : undefined}
                     >
                       {item.name}
                     </Disclosure.Button>
+                  </Link>
                   ))}
-                  <button className="sm:hidden border w-full px-5 py-2 rounded-3xl mr-3 text-white text-sm font-semibold bg-transparent  hover:bg-gray-800 hover:text-white hover:border-none">
-                    LET'S TALK
-                  </button>
+                  <Link href={"/contact"}>
+                    <button className="sm:hidden border w-full px-5 py-2 rounded-3xl mr-3 text-white text-sm font-semibold bg-transparent  hover:bg-gray-800 hover:text-white hover:border-none">
+                      LET'S TALK
+                    </button>
+                  </Link>
                 </div>
               </Disclosure.Panel>
             </Transition>
           </>
         )}
       </Disclosure>
-      <TransitionSlide/>
     </>
   );
 };
