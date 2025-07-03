@@ -7,7 +7,7 @@ import { CounterSection } from "../CounterSection/CounterSection"
 
 const caseStudies = [
   {
-    title: "Website Development",
+    title: "Digital Accounting & Bookkeeping Automation",
     image: "/images/CaseStudy1.jpg",
     gradient: "from-[#4338CA] to-[#6366F1]",
     color: "#4338CA",
@@ -21,32 +21,25 @@ const caseStudies = [
     description: "Crafting intuitive user interfaces",
   },
   {
-    title: "Mobile App Development",
+    title: "Web Development",
     image: "/images/CaseStudy3.jpg",
     gradient: "from-[#312E81] to-[#3730A3]",
     color: "#312E81",
     description: "Building next-gen mobile solutions",
   },
   {
-    title: "Consulting and Maintenance",
+    title: "SEO and Marketing",
     image: "/images/CaseStudy4.jpg",
     gradient: "from-[#1E3A8A] to-[#2563EB]",
     color: "#1E3A8A",
     description: "Ensuring sustainable growth",
   },
   {
-    title: "SEO & Marketing",
+    title: "Mobile App Development",
     image: "/images/CaseStudy5.jpg",
     gradient: "from-[#1E40AF] to-[#3B82F6]",
     color: "#1E40AF",
     description: "Maximizing digital presence",
-  },
-  {
-    title: "Market Analytics & Reporting",
-    image: "/images/CaseStudy6.jpg",
-    gradient: "from-[#1D4ED8] to-[#60A5FA]",
-    color: "#1D4ED8",
-    description: "Data-driven insights",
   },
 ]
 

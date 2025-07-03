@@ -1,32 +1,31 @@
 export const caseStudies = [
   {
-    title: "Website Development",
-    slug: "website-development",
+    title: "Digital Accounting & Bookkeeping Automation",
+    slug: "accounting-automation",
     image: "/images/CaseStudy1.jpg",
     gradient: "from-[#4338CA] to-[#6366F1]",
     color: "#4338CA",
-    description:
-      "Creating powerful digital experiences through modern web development technologies and best practices.",
+    description: "Streamlining financial operations through intelligent automation solutions.",
     longDescription:
-      "We helped transform our client's online presence with a modern, high-performance website that significantly improved user engagement and conversion rates.",
-    category: "Web Development",
-    services: ["Web Development", "UI/UX Design", "Strategy"],
-    timeline: "3 months",
-    technologies: ["React", "Next.js", "Tailwind CSS"],
+      "We implemented a comprehensive digital accounting system that automated bookkeeping processes, reduced errors, and provided real-time financial insights.",
+    category: "Finance Automation",
+    services: ["Accounting Automation", "Bookkeeping", "Financial Reporting"],
+    timeline: "4 months",
+    technologies: ["QuickBooks API", "Xero", "Python", "RPA"],
     stats: [
       {
-        label: "Increase in Revenue",
-        value: "45%",
-        icon: "📈",
+        label: "Process Efficiency",
+        value: "70%",
+        icon: "⚡",
       },
       {
-        label: "User Engagement",
-        value: "60%",
-        icon: "👥",
+        label: "Error Reduction",
+        value: "90%",
+        icon: "📉",
       },
       {
-        label: "Project Timeline",
-        value: "3 Months",
+        label: "Time Savings",
+        value: "60hrs/week",
         icon: "⏱️",
       },
       {
@@ -38,67 +37,67 @@ export const caseStudies = [
     challenge: {
       title: "The Challenge",
       description:
-        "The client needed a modern, high-performance website that could handle increased traffic while providing an exceptional user experience. Their existing site was outdated and didn't reflect their brand values.",
+        "The client was struggling with manual accounting processes that were time-consuming, error-prone, and lacked real-time visibility into financial data.",
     },
     solution: {
       title: "The Solution",
       description:
-        "We implemented a complete redesign using modern web technologies, focusing on performance optimization and user experience. The new site features a responsive design, optimized loading times, and improved navigation.",
+        "We developed a custom automation solution integrating accounting software with AI-powered data extraction and robotic process automation (RPA) for end-to-end financial process automation.",
     },
     images: [
       {
         url: "/images/web-development.jpg",
-        alt: "Website development process",
+        alt: "Accounting automation dashboard",
       },
       {
         url: "/images/web-development2.jpg",
-        alt: "Final website implementation",
+        alt: "Automated bookkeeping workflow",
       },
     ],
     process: [
       {
-        title: "Discovery",
-        description: "Conducted thorough research and analysis of client requirements and user needs.",
+        title: "Assessment",
+        description: "Analyzed existing accounting workflows and pain points.",
       },
       {
         title: "Design",
-        description: "Created responsive wireframes and high-fidelity designs.",
+        description: "Created automation architecture and integration plan.",
       },
       {
-        title: "Development",
-        description: "Built the website using React, Next.js, and Tailwind CSS.",
+        title: "Implementation",
+        description: "Developed custom automation scripts and integrations.",
       },
       {
-        title: "Launch",
-        description: "Deployed and optimized the website for performance.",
+        title: "Training",
+        description: "Provided staff training and documentation.",
       },
     ],
     results: {
       metrics: [
         {
-          metric: "Page Load Speed",
-          value: "+150%",
-          description: "Increase in page load speed",
+          metric: "Efficiency Gain",
+          value: "70%",
+          description: "Reduction in manual processes",
         },
         {
-          metric: "Conversion Rate",
-          value: "+45%",
-          description: "Improvement in conversion rate",
+          metric: "Accuracy",
+          value: "90%",
+          description: "Reduction in accounting errors",
         },
         {
-          metric: "User Engagement",
-          value: "+60%",
-          description: "Increase in user engagement",
+          metric: "Reporting Speed",
+          value: "Real-time",
+          description: "Financial reporting capability",
         },
       ],
     },
     testimonial: {
       quote:
-        "The website development service provided by this agency exceeded our expectations. The new site has transformed our business and driven significant growth.",
+        "The accounting automation solution transformed our finance department. What used to take days now happens automatically with perfect accuracy.",
       author: {
-        name: "Sarah Johnson",
-        title: "Marketing Director, TechCorp",
-        initials: "SJ",
+        name: "James Wilson",
+        title: "CFO, FinTech Solutions",
+        initials: "JW",
       },
     },
     progress: 100,
@@ -207,215 +206,112 @@ export const caseStudies = [
     progress: 100,
   },
   {
-    title: "Mobile App Development",
-    slug: "mobile-app-development",
+    title: "Web Development",
+    slug: "website-development",
     image: "/images/CaseStudy3.jpg",
     gradient: "from-[#312E81] to-[#3730A3]",
     color: "#312E81",
-    description: "Building next-gen mobile solutions that transform businesses.",
+    description: "Creating powerful digital experiences through modern web development technologies.",
     longDescription:
-      "We developed a cutting-edge mobile application that streamlined operations and enhanced user engagement across both iOS and Android platforms.",
-    category: "Mobile Development",
-    services: ["Mobile Development", "UI/UX Design", "Testing"],
-    timeline: "4 months",
-    technologies: ["React Native", "iOS", "Android"],
+      "We helped transform our client's online presence with a modern, high-performance website that significantly improved user engagement and conversion rates.",
+    category: "Web Development",
+    services: ["Web Development", "UI/UX Design", "Strategy"],
+    timeline: "3 months",
+    technologies: ["React", "Next.js", "Tailwind CSS"],
     stats: [
       {
-        label: "App Downloads",
-        value: "100K+",
-        icon: "📱",
+        label: "Increase in Revenue",
+        value: "45%",
+        icon: "📈",
       },
       {
-        label: "User Rating",
-        value: "4.8/5",
-        icon: "⭐",
-      },
-      {
-        label: "Customer Retention",
-        value: "+30%",
-        icon: "🔄",
+        label: "User Engagement",
+        value: "60%",
+        icon: "👥",
       },
       {
         label: "Project Timeline",
-        value: "4 Months",
+        value: "3 Months",
         icon: "⏱️",
+      },
+      {
+        label: "Client Satisfaction",
+        value: "100%",
+        icon: "⭐",
       },
     ],
     challenge: {
       title: "The Challenge",
       description:
-        "The client needed a cross-platform mobile application that could provide a seamless experience for their users while maintaining high performance and reliability.",
+        "The client needed a modern, high-performance website that could handle increased traffic while providing an exceptional user experience. Their existing site was outdated and didn't reflect their brand values.",
     },
     solution: {
       title: "The Solution",
       description:
-        "We developed a React Native application that delivers native performance on both iOS and Android, with a unified codebase for efficient maintenance and updates.",
+        "We implemented a complete redesign using modern web technologies, focusing on performance optimization and user experience. The new site features a responsive design, optimized loading times, and improved navigation.",
     },
     images: [
       {
-        url: "/images/mobile-development.jpg",
-        alt: "Mobile app development process",
+        url: "/images/web-development.jpg",
+        alt: "Website development process",
       },
       {
-        url: "/images/mobile-development1.jpg",
-        alt: "Final app implementation",
+        url: "/images/web-development2.jpg",
+        alt: "Final website implementation",
       },
     ],
     process: [
       {
-        title: "Planning",
-        description: "Defined app architecture and technical requirements.",
+        title: "Discovery",
+        description: "Conducted thorough research and analysis of client requirements and user needs.",
       },
       {
         title: "Design",
-        description: "Created platform-specific UI/UX designs.",
+        description: "Created responsive wireframes and high-fidelity designs.",
       },
       {
         title: "Development",
-        description: "Built the app using React Native for cross-platform compatibility.",
+        description: "Built the website using React, Next.js, and Tailwind CSS.",
       },
       {
-        title: "Testing",
-        description: "Conducted thorough testing on both iOS and Android platforms.",
+        title: "Launch",
+        description: "Deployed and optimized the website for performance.",
       },
     ],
     results: {
       metrics: [
         {
-          metric: "Downloads",
-          value: "100K+",
-          description: "Downloads in first month",
+          metric: "Page Load Speed",
+          value: "+150%",
+          description: "Increase in page load speed",
         },
         {
-          metric: "User Rating",
-          value: "4.8/5",
-          description: "Average user rating",
+          metric: "Conversion Rate",
+          value: "+45%",
+          description: "Improvement in conversion rate",
         },
         {
-          metric: "Retention",
-          value: "+30%",
-          description: "Increase in customer retention",
+          metric: "User Engagement",
+          value: "+60%",
+          description: "Increase in user engagement",
         },
       ],
     },
     testimonial: {
       quote:
-        "The mobile app has revolutionized how we interact with our customers. The team's expertise in both iOS and Android development was invaluable.",
+        "The website development service provided by this agency exceeded our expectations. The new site has transformed our business and driven significant growth.",
       author: {
-        name: "Emily Rodriguez",
-        title: "CTO, MobileFirst",
-        initials: "ER",
+        name: "Sarah Johnson",
+        title: "Marketing Director, TechCorp",
+        initials: "SJ",
       },
     },
     progress: 100,
   },
   {
-    title: "Consulting and Maintenance",
-    slug: "consulting-maintenance",
-    image: "/images/CaseStudy4.jpg",
-    gradient: "from-[#1E3A8A] to-[#2563EB]",
-    color: "#1E3A8A",
-    description: "Ensuring sustainable growth through expert consulting and maintenance services.",
-    longDescription:
-      "Our ongoing consulting and maintenance services helped optimize performance, reduce downtime, and ensure continuous improvement of digital assets.",
-    category: "Consulting",
-    services: ["Consulting", "Maintenance", "Support"],
-    timeline: "Ongoing",
-    technologies: ["DevOps", "Cloud", "Analytics"],
-    stats: [
-      {
-        label: "System Uptime",
-        value: "99.99%",
-        icon: "⚡",
-      },
-      {
-        label: "Cost Reduction",
-        value: "50%",
-        icon: "💰",
-      },
-      {
-        label: "Support Coverage",
-        value: "24/7",
-        icon: "🔧",
-      },
-      {
-        label: "Response Time",
-        value: "<1hr",
-        icon: "⏰",
-      },
-    ],
-    challenge: {
-      title: "The Challenge",
-      description:
-        "The client needed to optimize their infrastructure costs while maintaining high availability and performance for their growing digital platforms.",
-    },
-    solution: {
-      title: "The Solution",
-      description:
-        "We implemented a comprehensive maintenance strategy with proactive monitoring, automated scaling, and 24/7 support coverage.",
-    },
-    images: [
-      {
-        url: "/images/consulting.jpg",
-        alt: "System monitoring dashboard",
-      },
-      {
-        url: "/images/maintaince.jpg",
-        alt: "Infrastructure optimization",
-      },
-    ],
-    process: [
-      {
-        title: "Assessment",
-        description: "Evaluated existing infrastructure and identified optimization opportunities.",
-      },
-      {
-        title: "Planning",
-        description: "Developed comprehensive maintenance and support strategy.",
-      },
-      {
-        title: "Implementation",
-        description: "Deployed monitoring tools and automated scaling solutions.",
-      },
-      {
-        title: "Optimization",
-        description: "Continuous improvement and cost optimization.",
-      },
-    ],
-    results: {
-      metrics: [
-        {
-          metric: "Uptime",
-          value: "99.99%",
-          description: "System availability achieved",
-        },
-        {
-          metric: "Cost Reduction",
-          value: "50%",
-          description: "Reduction in maintenance costs",
-        },
-        {
-          metric: "Support",
-          value: "24/7",
-          description: "Round-the-clock coverage",
-        },
-      ],
-    },
-    testimonial: {
-      quote:
-        "Their consulting and maintenance services have been crucial in keeping our systems running smoothly. The team's proactive approach has prevented numerous potential issues.",
-      author: {
-        name: "David Wilson",
-        title: "Operations Director, CloudScale",
-        initials: "DW",
-      },
-    },
-    progress: 100,
-  },
-  {
-    title: "SEO & Marketing",
+    title: "SEO and Marketing",
     slug: "seo-marketing",
-    image: "/images/CaseStudy5.jpg",
+    image: "/images/CaseStudy4.jpg",
     gradient: "from-[#1E40AF] to-[#3B82F6]",
     color: "#1E40AF",
     description: "Maximizing digital presence through strategic SEO and marketing initiatives.",
@@ -516,107 +412,106 @@ export const caseStudies = [
     progress: 100,
   },
   {
-    title: "Market Analytics & Reporting",
-    slug: "market-analytics",
-    image: "/images/CaseStudy6.jpg",
-    gradient: "from-[#1D4ED8] to-[#60A5FA]",
-    color: "#1D4ED8",
-    description: "Data-driven insights that power business decisions.",
+    title: "Mobile App Development",
+    slug: "mobile-app-development",
+    image: "/images/CaseStudy5.jpg",
+    gradient: "from-[#1E3A8A] to-[#2563EB]",
+    color: "#1E3A8A",
+    description: "Building next-gen mobile solutions that transform businesses.",
     longDescription:
-      "Our analytics and reporting solutions provided actionable insights that drove strategic decision-making and business growth.",
-    category: "Analytics",
-    services: ["Analytics", "Reporting", "Strategy"],
-    timeline: "3 months",
-    technologies: ["Tableau", "Power BI", "Python"],
+      "We developed a cutting-edge mobile application that streamlined operations and enhanced user engagement across both iOS and Android platforms.",
+    category: "Mobile Development",
+    services: ["Mobile Development", "UI/UX Design", "Testing"],
+    timeline: "4 months",
+    technologies: ["React Native", "iOS", "Android"],
     stats: [
       {
-        label: "Reporting Efficiency",
-        value: "+85%",
-        icon: "📊",
+        label: "App Downloads",
+        value: "100K+",
+        icon: "📱",
       },
       {
-        label: "Decision Accuracy",
-        value: "+40%",
-        icon: "🎯",
+        label: "User Rating",
+        value: "4.8/5",
+        icon: "⭐",
       },
       {
-        label: "Time Savings",
-        value: "60%",
-        icon: "⚡",
+        label: "Customer Retention",
+        value: "+30%",
+        icon: "🔄",
       },
       {
         label: "Project Timeline",
-        value: "3 Months",
+        value: "4 Months",
         icon: "⏱️",
       },
     ],
     challenge: {
       title: "The Challenge",
       description:
-        "The client needed to transform their data into actionable insights and improve their decision-making process through better analytics and reporting.",
+        "The client needed a cross-platform mobile application that could provide a seamless experience for their users while maintaining high performance and reliability.",
     },
     solution: {
       title: "The Solution",
       description:
-        "We implemented advanced analytics tools and created custom dashboards that provided real-time insights and automated reporting capabilities.",
+        "We developed a React Native application that delivers native performance on both iOS and Android, with a unified codebase for efficient maintenance and updates.",
     },
     images: [
       {
-        url: "/images/Market-analytics.jpg",
-        alt: "Analytics dashboard development",
+        url: "/images/mobile-development.jpg",
+        alt: "Mobile app development process",
       },
       {
-        url: "/images/Market-analytics2.jpg",
-        alt: "Data visualization implementation",
+        url: "/images/mobile-development1.jpg",
+        alt: "Final app implementation",
       },
     ],
     process: [
       {
-        title: "Analysis",
-        description: "Analyzed data requirements and reporting needs.",
+        title: "Planning",
+        description: "Defined app architecture and technical requirements.",
       },
       {
         title: "Design",
-        description: "Designed custom dashboards and reports.",
+        description: "Created platform-specific UI/UX designs.",
       },
       {
-        title: "Implementation",
-        description: "Deployed analytics tools and automation.",
+        title: "Development",
+        description: "Built the app using React Native for cross-platform compatibility.",
       },
       {
-        title: "Training",
-        description: "Provided team training and documentation.",
+        title: "Testing",
+        description: "Conducted thorough testing on both iOS and Android platforms.",
       },
     ],
     results: {
       metrics: [
         {
-          metric: "Efficiency",
-          value: "+85%",
-          description: "Improvement in reporting efficiency",
+          metric: "Downloads",
+          value: "100K+",
+          description: "Downloads in first month",
         },
         {
-          metric: "Accuracy",
-          value: "+40%",
-          description: "Better decision accuracy",
+          metric: "User Rating",
+          value: "4.8/5",
+          description: "Average user rating",
         },
         {
-          metric: "Speed",
-          value: "+60%",
-          description: "Faster insights delivery",
+          metric: "Retention",
+          value: "+30%",
+          description: "Increase in customer retention",
         },
       ],
     },
     testimonial: {
       quote:
-        "The market analytics and reporting capabilities delivered by the team have revolutionized how we make decisions. The insights are invaluable.",
+        "The mobile app has revolutionized how we interact with our customers. The team's expertise in both iOS and Android development was invaluable.",
       author: {
-        name: "Robert Chang",
-        title: "Analytics Director, DataDrive",
-        initials: "RC",
+        name: "Emily Rodriguez",
+        title: "CTO, MobileFirst",
+        initials: "ER",
       },
     },
     progress: 100,
-  },
-]
-
+  }
+];

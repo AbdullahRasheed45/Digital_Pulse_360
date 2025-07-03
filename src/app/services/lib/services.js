@@ -26,9 +26,62 @@ import {
   PieChart,
   FileText,
   BarChart2,
+  Calculator,
+  CreditCard,
+  Receipt,
+  DollarSign,
+  Settings,
+  Briefcase,
 } from "lucide-react";
 
 export const services = [
+  {
+    icon: Calculator,
+    title: "Digital Accounting & Bookkeeping Automation",
+    slug: "digital-accounting-bookkeeping-automation",
+    shortDescription: "Smart books. Zero manual entry.",
+    longDescription:
+      "We don't just do bookkeeping — we streamline it. Our U.S.-registered team combines QuickBooks Online expertise with digital tools and API integration to help businesses move their entire accounting system to the cloud. We leverage cloud platforms and custom integrations to reduce manual entries and errors. Digital Pulse 360 also builds custom dashboards for cash flow & KPI tracking.",
+    color: "#4646ff",
+    features: [
+      {
+        icon: Shield,
+        title: "IRS-compliant Bookkeeping",
+        description:
+          "Maintain accurate, compliant financial records that meet all IRS requirements and standards.",
+      },
+      {
+        icon: Zap,
+        title: "Bank Feed Automation",
+        description:
+          "Automatically sync and categorize bank transactions to eliminate manual data entry.",
+      },
+      {
+        icon: Settings,
+        title: "QuickBooks/Xero Setup & Migration",
+        description:
+          "Seamlessly set up or migrate your accounting system to cloud-based platforms.",
+      },
+      {
+        icon: Receipt,
+        title: "Expense Management & Receipt Digitization",
+        description:
+          "Streamline expense tracking with automated receipt capture and categorization.",
+      },
+      {
+        icon: FileText,
+        title: "Automated Monthly Reporting",
+        description:
+          "Generate comprehensive financial reports automatically every month.",
+      },
+      {
+        icon: DollarSign,
+        title: "W-9, 1099 & Tax Prep Support",
+        description:
+          "Handle all tax-related documentation and preparation with expert support.",
+      },
+    ],
+  },
   {
     icon: Palette,
     title: "UI/UX Design",
@@ -172,147 +225,52 @@ export const services = [
       },
     ],
   },
+
   {
     icon: Smartphone,
     title: "Mobile App Development",
     slug: "mobile-app-development",
     shortDescription:
-      "Creating innovative mobile experiences for iOS and Android",
+      "We build sleek, scalable apps — so your business is always one tap away.",
     longDescription:
-      "We design and develop feature-rich, user-friendly mobile applications that engage your audience and drive business growth. Our expertise spans both iOS and Android platforms, ensuring broad market reach.",
+      "We turn your ideas into powerful mobile apps that work beautifully on both iOS and Android. From user-friendly interfaces to smooth backend integrations, we handle everything — design, development, and post-launch support. Perfect for startups, service businesses, e-commerce, financial tools, booking apps, and more.",
     color: "#4646ff",
     features: [
       {
         icon: Smartphone,
-        title: "Native App Development",
+        title: "Cross-platform Development",
         description:
-          "Build high-performance native apps for iOS and Android platforms.",
+          "Build apps that work seamlessly on both iOS and Android using React Native and Flutter.",
       },
       {
-        icon: Zap,
-        title: "Cross-Platform Development",
+        icon: Eye,
+        title: "Clean, Intuitive UI/UX for Mobile",
         description:
-          "Develop apps that work seamlessly across multiple platforms using technologies like React Native or Flutter.",
+          "Create beautiful, user-friendly interfaces specifically designed for mobile experiences.",
       },
       {
-        icon: Users,
-        title: "User-Centric Design",
+        icon: CreditCard,
+        title: "Payment & API Integrations",
         description:
-          "Create intuitive and engaging user interfaces tailored for mobile experiences.",
-      },
-      {
-        icon: Shield,
-        title: "App Security",
-        description:
-          "Implement robust security measures to protect user data and ensure app integrity.",
-      },
-      {
-        icon: Cloud,
-        title: "Cloud Integration",
-        description:
-          "Integrate cloud services for scalable backend solutions and data management.",
-      },
-      {
-        icon: Rocket,
-        title: "App Store Optimization",
-        description:
-          "Optimize your app's visibility and discoverability on app stores.",
-      },
-    ],
-  },
-  {
-    icon: Monitor,
-    title: "Consulting and Maintenance",
-    slug: "consulting-and-maintenance",
-    shortDescription:
-      "Expert IT consulting and comprehensive system maintenance services",
-    longDescription:
-      "Elevate your business technology infrastructure with our expert consulting and maintenance services. We provide strategic guidance on digital transformation while ensuring your systems operate at peak performance. Our proactive maintenance approach prevents issues before they impact your business, maximizing uptime and efficiency.",
-    color: "#4646ff",
-    features: [
-      {
-        icon: Target,
-        title: "Strategic Technology Planning",
-        description:
-          "Develop comprehensive technology roadmaps aligned with your business objectives and growth targets.",
-      },
-      {
-        icon: Shield,
-        title: "Proactive System Maintenance",
-        description:
-          "Regular system health checks, updates, and preventive maintenance to ensure optimal performance.",
-      },
-      {
-        icon: Cloud,
-        title: "Cloud Infrastructure Optimization",
-        description:
-          "Expert guidance on cloud adoption, migration, and optimization for maximum efficiency and cost-effectiveness.",
-      },
-      {
-        icon: Cpu,
-        title: "24/7 System Monitoring",
-        description:
-          "Round-the-clock monitoring and rapid response to potential issues, ensuring business continuity.",
+          "Integrate with Stripe, CRMs, databases, and other essential business tools.",
       },
       {
         icon: Users,
-        title: "Staff Training & Support",
+        title: "Admin Dashboards & User Management",
         description:
-          "Comprehensive training programs and ongoing support to maximize technology adoption and efficiency.",
+          "Build comprehensive admin panels and user management systems for your app.",
       },
       {
-        icon: LineChart,
-        title: "Performance Optimization",
+        icon: Settings,
+        title: "Ongoing Maintenance & Feature Updates",
         description:
-          "Continuous analysis and optimization of your technology stack for peak performance and ROI.",
-      },
-    ],
-  },
-  {
-    icon: BarChart3,
-    title: "Marketing Analytics and Reporting",
-    slug: "marketing-analytics-and-reporting",
-    shortDescription:
-      "Data-driven marketing insights and comprehensive performance reporting",
-    longDescription:
-      "Transform your marketing efforts with our advanced analytics and reporting solutions. We help you understand your audience better, track campaign performance, and make data-driven decisions that drive ROI. Our comprehensive reporting provides clear insights into your marketing success, enabling strategic optimization and growth.",
-    color: "#4646ff",
-    features: [
-      {
-        icon: PieChart,
-        title: "Campaign Performance Analytics",
-        description:
-          "Track and analyze marketing campaign performance across all channels for optimized ROI.",
+          "Continuous support and feature enhancements to keep your app current and competitive.",
       },
       {
-        icon: LineChart,
-        title: "Customer Journey Analysis",
+        icon: Briefcase,
+        title: "Business-Ready Solutions",
         description:
-          "Map and analyze customer touchpoints to optimize the conversion funnel and improve user experience.",
-      },
-      {
-        icon: BarChart2,
-        title: "Competitive Intelligence",
-        description:
-          "Monitor and analyze competitor performance to identify opportunities and maintain market advantage.",
-      },
-      {
-        icon: FileText,
-        title: "Custom Report Generation",
-        description:
-          "Create detailed, customized reports that provide actionable insights for stakeholders.",
-      },
-      {
-        icon: Target,
-        title: "Attribution Modeling",
-        description:
-          "Advanced attribution analysis to understand which marketing channels drive the best results.",
-      },
-      {
-        icon: TrendingUp,
-        title: "ROI Tracking & Forecasting",
-        description:
-          "Measure marketing ROI and forecast future performance using predictive analytics.",
+          "Ideal for startups, service businesses, e-commerce, financial tools, and booking platforms.",
       },
     ],
   },
