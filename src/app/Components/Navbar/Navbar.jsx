@@ -5,7 +5,7 @@ import { Bars3BottomLeftIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import Image from "next/image";
 
-const navigation = [
+const navigation = [ 
   { name: "About", href: "/about", current: false },
   { name: "Services", href: "/services", current: false },
   { name: "Portfolio", href: "/case-study", current: false },
