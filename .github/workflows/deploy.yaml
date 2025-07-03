@@ -34,4 +34,4 @@ jobs:
           protocol: ftp
           port: ${{ secrets.FTP_PORT }}
           local-dir: ./out/
-          server-dir: public_html 
+          server-dir: public_html/ 
